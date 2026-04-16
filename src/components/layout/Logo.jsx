@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const Logo = () => {
+    
     return (
         <Link className='flex items-center gap-2' href={'/'}>
             <Image
