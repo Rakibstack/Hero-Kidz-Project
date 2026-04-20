@@ -7,9 +7,7 @@ const loading = () => {
             {
                 [...Array(9)].map((_, index) => (
                     <ProductSkeleton key={index}></ProductSkeleton>
-                )
-                      
-                )
+                )  )
             }
             
         </div>

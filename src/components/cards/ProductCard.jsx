@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 
@@ -70,6 +71,9 @@ const ProductCard = ({ product }) => {
           <FaCartPlus />
           Add to Cart
         </button>
+        <Link href={`/products/${product.id}`} className="btn btn-primary btn-outline btn-sm mt-2 flex items-center gap-2">
+          View Details
+        </Link>
       </div>
     </div>
   );
