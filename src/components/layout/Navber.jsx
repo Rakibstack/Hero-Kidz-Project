@@ -9,6 +9,7 @@ const Navber = () => {
   const nav = <>
   <ul className="menu menu-horizontal px-1">
     <li><NavLink href="/">Home</NavLink></li>
+    <li><NavLink href="/products">Products</NavLink></li>
   <li><NavLink href="/about">About</NavLink></li>
   <li><NavLink href="/contact">Contact</NavLink></li>
   <li><NavLink href="/services">Services</NavLink></li>
