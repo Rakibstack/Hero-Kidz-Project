@@ -4,6 +4,7 @@ import products from "../../data/toys.json";
 import { notFound } from "next/navigation";
 
 const ProductPage = async ({ params }) => {
+  
   const { id } = await params;
 
   // find product
