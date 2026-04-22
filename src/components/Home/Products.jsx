@@ -6,7 +6,7 @@ import { getProducts } from "@/actions/server/product";
 
 const Products = async () => {
 
-  const products = ( await getProducts() ) || [];
+  const products =  await getProducts();
 
   return (
     <div>
