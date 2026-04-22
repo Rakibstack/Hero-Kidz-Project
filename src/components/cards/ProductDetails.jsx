@@ -21,10 +21,11 @@ const ProductDetails = ({ product }) => {
 
   return (
     <div className="max-w-6xl mx-auto p-4">
+    
 
       <div className="grid md:grid-cols-2 gap-8">
 
-        {/* 🔥 Left: Image */}
+        {/*  Left: Image */}
         <div className="bg-base-100 p-4 rounded-xl shadow">
           <Image
             src={image}
@@ -35,7 +36,7 @@ const ProductDetails = ({ product }) => {
           />
         </div>
 
-        {/* 🔥 Right: Info */}
+        {/*  Right: Info */}
         <div className="space-y-4">
 
           {/* Title */}
@@ -78,7 +79,7 @@ const ProductDetails = ({ product }) => {
         </div>
       </div>
 
-      {/* 🔥 Description */}
+      {/*  Description */}
       <div className="mt-10 space-y-4">
         <h2 className="text-xl font-semibold">Product Description</h2>
         <p className="text-gray-600 whitespace-pre-line">
@@ -86,7 +87,7 @@ const ProductDetails = ({ product }) => {
         </p>
       </div>
 
-      {/* 🔥 Info List */}
+      {/*  Info List */}
       <div className="mt-6">
         <h2 className="text-xl font-semibold mb-3">Key Features</h2>
         <ul className="list-disc pl-6 space-y-1">
@@ -96,7 +97,7 @@ const ProductDetails = ({ product }) => {
         </ul>
       </div>
 
-      {/* 🔥 Q&A */}
+      {/*  Q&A */}
       <div className="mt-10">
         <h2 className="text-xl font-semibold mb-3">Q & A</h2>
 
