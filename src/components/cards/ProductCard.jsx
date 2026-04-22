@@ -11,6 +11,7 @@ const ProductCard = ({ product }) => {
     discount,
     ratings,
     sold,
+    _id
   } = product;
 
   const discountedPrice = price - (price * discount) / 100;
@@ -39,7 +40,7 @@ const ProductCard = ({ product }) => {
       {/* Content */}
       <div className="card-body p-4">
         
-        {/* Title */}
+        Title
         <h2 className="card-title text-sm line-clamp-2">
           {title}
         </h2>
@@ -71,7 +72,7 @@ const ProductCard = ({ product }) => {
           <FaCartPlus />
           Add to Cart
         </button>
-        <Link href={`/products/${product.id}`} className="btn btn-primary btn-outline btn-sm mt-2 flex items-center gap-2">
+        <Link href={`/products/${_id}`} className="btn btn-primary btn-outline btn-sm mt-2 flex items-center gap-2">
           View Details
         </Link>
       </div>
