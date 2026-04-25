@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { FaStar, FaCartPlus, FaBolt } from "react-icons/fa";
+import { FaStar, } from "react-icons/fa";
+import CardButton from "../buttons/CardButton";
 
 const ProductDetails = ({ product }) => {
   const {
@@ -97,15 +98,8 @@ const ProductDetails = ({ product }) => {
 
           {/* 🔥 Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 pt-3">
-            <button className="btn btn-primary flex-1 flex items-center justify-center gap-2">
-              <FaCartPlus />
-              Add to Cart
-            </button>
+           <CardButton product={product}></CardButton>
 
-            <button className="btn btn-secondary flex-1 flex items-center justify-center gap-2">
-              <FaBolt />
-              Buy Now
-            </button>
           </div>
         </div>
       </div>
