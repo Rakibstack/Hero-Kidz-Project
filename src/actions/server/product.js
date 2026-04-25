@@ -1,8 +1,8 @@
-import { dbConnect } from "@/app/lib/connectDB";
+import { collectionName, dbConnect } from "@/app/lib/connectDB";
 import { ObjectId } from "mongodb";
 
 export const getProducts = async () => {
-  const data = await dbConnect("products").find().toArray();
+  const data = await dbConnect(collectionName.PRODUCTS).find().toArray();
   return data;
 };
 
@@ -11,7 +11,7 @@ export const getSingleProduct = async (id) => {
     return {};
   }
   const query = { _id: new ObjectId(id) };
-  const data = await dbConnect("products").findOne(query);
+  const data = await dbConnect(collectionName.PRODUCTS).findOne(query);
   return {
     ...data,
     _id: data._id.toString(),
