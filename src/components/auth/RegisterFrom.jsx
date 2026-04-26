@@ -1,6 +1,5 @@
 
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -33,9 +32,7 @@ const RegisterForm = () => {
     }
      
    }
-
    
-
  return (
   <div className="min-h-screen flex items-center justify-center bg-base-200 py-4 px-4">
 
@@ -45,7 +42,7 @@ const RegisterForm = () => {
      {/* Heading */}
      <div className="text-center mb-6">
       <h1 className="text-3xl font-bold">
-       Create Account
+       Create Account 
       </h1>
 
       <p className="text-sm text-gray-500 mt-2">

@@ -1,3 +1,4 @@
+import { getUser } from "@/actions/server/auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions = {
@@ -7,12 +8,12 @@ export const authOptions = {
       name: "Credentials",
 
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "jsmith" },
-        password: { label: "Password", type: "password" },
+        // username: { label: "Username", type: "text", placeholder: "jsmith" },
+        // password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        // Return null if user data could not be retrieved
-        return null;
+        const user = await getUser(credentials);
+        return user;
       },
     }),
   ],

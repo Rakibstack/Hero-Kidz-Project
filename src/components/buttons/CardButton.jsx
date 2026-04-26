@@ -3,11 +3,13 @@ import React from "react";
 import { FaCartPlus } from "react-icons/fa";
 
 const CardButton = ({ product }) => {
+
   const isLoggedIn = false;
   const router = useRouter();
   const path = usePathname();
 
   const add2Cart = () => {
+
     if (isLoggedIn) {
       alert(`Added ${product.title} to cart!❤️👌`);
     } else {
@@ -21,7 +23,7 @@ const CardButton = ({ product }) => {
         onClick={add2Cart}
         className="btn btn-primary flex-1 flex items-center justify-center gap-2"
       >
-        <FaCartPlus />
+        < FaCartPlus/>
         Add to Cart
       </button>
     </div>
