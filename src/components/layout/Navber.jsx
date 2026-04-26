@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import NavLink from "../buttons/NavLink";
 import Link from "next/link";
 import { LuShoppingCart } from "react-icons/lu";
+import AuthButton from "../buttons/AuthButton";
 
 const Navber = () => {
 
@@ -53,7 +54,7 @@ const Navber = () => {
       </div>
       <div className="navbar-end space-x-2">
         <Link className="btn btn-primary" href={'/cart'}> <LuShoppingCart  />  </Link>
-        <Link className="btn btn-primary btn-outline font-bold" href={'/login'}>Login</Link>
+        <AuthButton></AuthButton>
       </div>
     </div>
   );
