@@ -1,17 +1,23 @@
+import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
+import React, { use } from "react";
 import { FaCartPlus } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const CardButton = ({ product }) => {
 
-  const isLoggedIn = false;
+  const session = useSession();
+  const isLoggedIn = session?.status === 'authenticated';
   const router = useRouter();
   const path = usePathname();
 
   const add2Cart = () => {
-
     if (isLoggedIn) {
-      alert(`Added ${product.title} to cart!❤️👌`);
+      Swal.fire({
+        icon: 'success',
+        title: 'Added to Cart',
+        text: `${product.title} has been added to your cart!`,
+      });
     } else {
       router.push(`/login?callbackUrl=${path}`);
     }
@@ -23,7 +29,7 @@ const CardButton = ({ product }) => {
         onClick={add2Cart}
         className="btn btn-primary flex-1 flex items-center justify-center gap-2"
       >
-        < FaCartPlus/>
+        <FaCartPlus />
         Add to Cart
       </button>
     </div>

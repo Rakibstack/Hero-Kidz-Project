@@ -9,7 +9,7 @@ const AuthButton = () => {
 
   return (
     <div>
-      {session.status === "authenticated" ? (
+      {session?.status === "authenticated" ? (
         <>
           <button onClick={() => signOut()} className="btn btn-primary btn-outline">Log Out</button>
         </>
