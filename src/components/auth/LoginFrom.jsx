@@ -4,9 +4,13 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle,  } from "react-icons/fa";
 import Link from "next/link";
 import { signIn } from "next-auth/react"
+import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const route = useRouter();
 
   const HandleLogIn = async (e) => {
     e.preventDefault();
@@ -17,12 +21,24 @@ const LoginForm = () => {
     password: e.target.password.value
    }
     const result = await signIn("credentials",{ ...user, redirect:false });
-    if(result.error){
-      alert(result.error);
+    console.log(result);
+    
+    if(!result.ok){
+      Swal.fire({
+        icon: "error",
+        title: "Login Failed",
+        text: "Invalid email or password. Please try again.",
+      });
     } else {
-      alert("Login successful!");
+      Swal.fire({
+        icon: "success",
+        title: "Login Successful",
+        text: "You have been logged in successfully.",
+      });
+      route.push("/");
     }
   };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-base-200 py-4 px-4">
       <div className="card bg-base-100  w-full max-w-md shadow-2xl border border-base-300">
