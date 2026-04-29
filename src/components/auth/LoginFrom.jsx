@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { FaEye, FaEyeSlash, FaGoogle,  } from "react-icons/fa";
+import { FaEye, FaEyeSlash,  } from "react-icons/fa";
 import Link from "next/link";
 import { signIn } from "next-auth/react"
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
+import SocialLogin from "../buttons/SocialLogin";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +22,6 @@ const LoginForm = () => {
     password: e.target.password.value
    }
     const result = await signIn("credentials",{ ...user, redirect:false });
-    console.log(result);
     
     if(!result.ok){
       Swal.fire({
@@ -94,10 +94,7 @@ const LoginForm = () => {
 
           <div className="divider my-6">OR</div>
 
-          <button className="btn btn-outline w-full mb-3 gap-2 rounded-xl">
-            <FaGoogle />
-            Continue with Google
-          </button>
+         <SocialLogin></SocialLogin>
 
           <p className="text-center mt-6 text-sm">
             Don’t have an account?{" "}

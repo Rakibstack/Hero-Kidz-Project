@@ -20,7 +20,7 @@ export const postUser = async (payload) => {
     email,
     password: await bcrypt.hash(password, 15),
     role: "user",
-    createAt: new Date(),
+    createAt: new Date().toLocaleString(),
   };
 
   const result = await dbConnect(collectionName.USERS).insertOne(newUser);
